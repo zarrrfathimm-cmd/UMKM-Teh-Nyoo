@@ -1,0 +1,1756 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Nunito:wght@600;700;800;900&display=swap');
+
+:root {
+    --green: #174b2b;
+    --dark-green: #10371f;
+    --orange: #ff641c;
+    --yellow: #ffc62e;
+    --cream: #fff7e5;
+    --text: #183d25;
+    --muted: #667456;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+body {
+    font-family: 'DM Sans', Arial, sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+.header {
+    min-height: 76px;
+    padding: 15px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    background: #fffaf0;
+    border-bottom: 1px solid #e7ddc5;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--green);
+    font-family: 'Nunito', sans-serif;
+    font-weight: 900;
+    font-size: 19px;
+    text-decoration: none;
+}
+
+.logo b {
+    color: var(--orange);
+}
+
+.logo-icon {
+    display: grid;
+    place-items: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: var(--green);
+    color: var(--yellow);
+}
+
+nav {
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    color: var(--green);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 800;
+}
+
+nav a:hover {
+    color: var(--orange);
+}
+
+/* Bagian utama */
+
+.hero {
+    min-height: 580px;
+    padding: 55px 7%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 25px;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 80% 45%,
+        #fffdf4, transparent 45%),
+        linear-gradient(130deg, #fff8e8, #f5e4b9);
+}
+
+.hero-text {
+    max-width: 580px;
+    position: relative;
+    z-index: 2;
+}
+
+.label {
+    color: var(--green);
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+}
+
+.hero h1 {
+    margin: 18px 0;
+    color: var(--orange);
+    font-family: 'Nunito', sans-serif;
+    font-size: clamp(38px, 5vw, 65px);
+    font-weight: 900;
+    line-height: 1.08;
+    letter-spacing: -1.5px;
+    text-shadow: 2px 3px #ffffff;
+}
+
+.hero h1 span {
+    color: var(--green);
+}
+
+.description {
+    max-width: 460px;
+    color: #52664b;
+    font-size: 15px;
+}
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    gap: 18px;
+    margin-top: 22px;
+    padding: 13px 20px;
+    border-radius: 9px;
+    background: var(--orange);
+    color: white;
+    font-size: 13px;
+    font-weight: 900;
+    text-decoration: none;
+    box-shadow: 0 6px 0 #d84d10;
+    transition: 0.2s;
+}
+
+.button:hover {
+    transform: translateY(2px);
+    box-shadow: 0 3px 0 #d84d10;
+}
+
+.button span {
+    font-size: 18px;
+}
+
+.small-note {
+    margin-top: 22px;
+    color: #7e8668;
+    font-size: 11px;
+}
+
+/* Ilustrasi gelas */
+
+.product {
+    min-height: 420px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    isolation: isolate;
+}
+
+.product::before {
+    content: "";
+    position: absolute;
+    width: min(370px, 85%);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: #ffcf57;
+    border: 9px solid #ffffffbb;
+    box-shadow: 0 15px 40px #5a481f20;
+    z-index: -2;
+}
+
+.cup {
+    position: absolute;
+    top: 85px;
+    width: 155px;
+    height: 255px;
+    border: 4px solid #ffffffd9;
+    border-radius: 15px 15px 35px 35px;
+    clip-path: polygon(0 0, 100% 0, 87% 100%, 13% 100%);
+    background: linear-gradient(
+        90deg,
+        #b94b16,
+        #ff9a24 30%,
+        #e45b16 65%,
+        #9f4014
+    );
+    box-shadow: 0 18px 25px #41311440;
+}
+
+.cup-back {
+    left: 8%;
+    top: 115px;
+    transform: rotate(-10deg) scale(0.84);
+    background: linear-gradient(
+        90deg,
+        #dcae25,
+        #ffe36b 35%,
+        #f5c83e 65%,
+        #bc8b1c
+    );
+}
+
+.cup-front {
+    right: 10%;
+    transform: rotate(7deg);
+}
+
+.ice {
+    position: absolute;
+    top: 22px;
+    width: 43px;
+    height: 36px;
+    border-radius: 9px;
+    background: linear-gradient(
+        135deg,
+        #ffffffed,
+        #fff4c34d
+    );
+    border: 2px solid #ffffffcc;
+}
+
+.ice-one {
+    left: 20px;
+    transform: rotate(12deg);
+}
+
+.ice-two {
+    right: 15px;
+    top: 32px;
+    transform: rotate(-16deg);
+}
+
+.ice-three {
+    left: 24px;
+    transform: rotate(-10deg);
+}
+
+.ice-four {
+    right: 18px;
+    top: 35px;
+    transform: rotate(17deg);
+}
+
+.cup-logo {
+    position: absolute;
+    top: 95px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 108px;
+    height: 95px;
+    border: 3px solid white;
+    border-radius: 45% 45% 48% 48%;
+    background: var(--green);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+}
+
+.cup-logo small {
+    color: var(--orange);
+    font-family: 'Nunito', sans-serif;
+    font-size: 13px;
+    font-weight: 900;
+}
+
+.cup-logo strong {
+    font-family: 'Nunito', sans-serif;
+    font-size: 27px;
+    font-weight: 900;
+}
+
+.cup-logo span {
+    color: var(--yellow);
+    font-size: 19px;
+}
+
+.decoration {
+    position: absolute;
+    color: var(--green);
+    font-size: 85px;
+    z-index: -1;
+}
+
+.leaf {
+    top: 5px;
+    left: 6%;
+    transform: rotate(-35deg);
+}
+
+.star {
+    right: 12%;
+    top: 35px;
+    color: var(--orange);
+}
+
+.lemon {
+    position: absolute;
+    right: 5%;
+    bottom: 45px;
+    width: 62px;
+    height: 62px;
+    display: grid;
+    place-items: center;
+    border: 7px solid #fff1a3;
+    border-radius: 50%;
+    background: #ffd53e;
+    color: #d69a16;
+    font-size: 24px;
+    box-shadow: 0 5px 12px #48350e30;
+}
+
+.product-caption {
+    position: absolute;
+    bottom: 3px;
+    left: 50%;
+    transform: translateX(-50%) rotate(-3deg);
+    width: 245px;
+    padding: 10px;
+    background: var(--green);
+    color: white;
+    text-align: center;
+    font-family: 'Nunito', sans-serif;
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+/* Slogan */
+
+.slogan {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 22px;
+    padding: 15px;
+    background: var(--green);
+    color: white;
+}
+
+.slogan p {
+    font-family: 'Nunito', sans-serif;
+    font-size: clamp(20px, 3vw, 28px);
+    font-weight: 800;
+}
+
+.slogan strong {
+    color: var(--yellow);
+}
+
+.slogan span {
+    color: var(--orange);
+    font-size: 23px;
+}
+
+/* Bagian informasi */
+
+.section {
+    padding: 75px 7%;
+    background: #fffaf0;
+    text-align: center;
+}
+
+.center {
+    margin: 0;
+}
+
+.section h2 {
+    margin: 10px 0;
+    color: var(--green);
+    font-family: 'Nunito', sans-serif;
+    font-size: clamp(29px, 4vw, 42px);
+    font-weight: 900;
+}
+
+.section-description {
+    margin: 0 auto 35px;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    max-width: 1100px;
+    margin: auto;
+    text-align: left;
+}
+
+.card {
+    position: relative;
+    padding: 27px;
+    border: 2px solid #f1e4c6;
+    border-radius: 18px;
+    background: white;
+    box-shadow: 0 12px 28px #31461b10;
+}
+
+.card.featured {
+    background: #f3f7e9;
+    border-color: #c8d8b9;
+}
+
+.card-icon {
+    display: grid;
+    place-items: center;
+    width: 52px;
+    height: 52px;
+    margin-bottom: 18px;
+    border-radius: 15px;
+    font-size: 27px;
+}
+
+.orange {
+    background: #ffeadb;
+    color: var(--orange);
+}
+
+.green {
+    background: #dce9ce;
+    color: var(--green);
+}
+
+.yellow {
+    background: #fff1b9;
+    color: #b17b00;
+}
+
+.number {
+    position: absolute;
+    top: 26px;
+    right: 26px;
+    color: #d2c3a5;
+    font-weight: 900;
+    font-size: 13px;
+}
+
+.card h3 {
+    margin-bottom: 8px;
+    color: var(--green);
+    font-family: 'Nunito', sans-serif;
+    font-size: 20px;
+}
+
+.card p {
+    color: #68735c;
+    font-size: 13px;
+}
+
+.note {
+    margin-top: 23px;
+    color: #8b8b70;
+    font-size: 11px;
+}
+
+/* Bagian promosi */
+
+.promo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 35px;
+    padding: 58px 10%;
+    background: var(--orange);
+    color: white;
+}
+
+.light {
+    color: #ffefb2;
+}
+
+.promo h2 {
+    margin: 12px 0;
+    font-family: 'Nunito', sans-serif;
+    font-size: clamp(30px, 4.5vw, 48px);
+    line-height: 1.1;
+}
+
+.promo h2 span {
+    color: #fff0a9;
+}
+
+.promo-text > p:not(.label) {
+    max-width: 590px;
+    margin-top: 12px;
+    color: #fff3e8;
+    font-size: 14px;
+}
+
+.button-green {
+    background: var(--green);
+    box-shadow: 0 6px 0 #0d351c;
+}
+
+.button-green:hover {
+    box-shadow: 0 3px 0 #0d351c;
+}
+
+.round-logo {
+    flex: 0 0 200px;
+    width: 200px;
+    height: 200px;
+    border: 4px solid white;
+    border-radius: 50%;
+    background: var(--green);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transform: rotate(5deg);
+}
+
+.round-logo > span {
+    color: var(--yellow);
+    font-size: 28px;
+}
+
+.round-logo h3 {
+    font-family: 'Nunito', sans-serif;
+    font-size: 21px;
+    line-height: 1;
+}
+
+.round-logo h3 strong {
+    color: var(--yellow);
+    font-size: 37px;
+}
+
+.round-logo small {
+    margin-top: 9px;
+    font-size: 9px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+/* Footer */
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    padding: 22px 7%;
+    background: var(--dark-green);
+    color: #d8e1cb;
+    font-size: 11px;
+}
+
+.footer-logo {
+    color: white;
+    font-size: 15px;
+}
+
+/* Tampilan HP dan tablet */
+
+@media (max-width: 850px) {
+    .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .hero-text {
+        margin: auto;
+    }
+
+    .description {
+        margin: auto;
+    }
+
+    .product {
+        width: min(520px, 100%);
+        margin: auto;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+        max-width: 540px;
+    }
+}
+
+@media (max-width: 560px) {
+    .header {
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px 18px;
+    }
+
+    nav a {
+        font-size: 12px;
+    }
+
+    .hero {
+        padding: 40px 17px 25px;
+    }
+
+    .hero h1 {
+        font-size: 39px;
+        letter-spacing: -1px;
+    }
+
+    .description {
+        font-size: 14px;
+    }
+
+    .product {
+        min-height: 350px;
+        transform: scale(0.9);
+        margin: -5px auto;
+    }
+
+    .cup {
+        width: 135px;
+        height: 230px;
+    }
+
+    .cup-back {
+        left: 4%;
+    }
+
+    .cup-front {
+        right: 6%;
+    }
+
+    .cup-logo {
+        top: 85px;
+        width: 98px;
+        height: 88px;
+    }
+
+    .cup-logo strong {
+        font-size: 24px;
+    }
+
+    .product-caption {
+        bottom: 0;
+        font-size: 10px;
+    }
+
+    .section {
+        padding: 55px 20px;
+    }
+
+    .promo {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 42px 22px;
+    }
+
+    .round-logo {
+        align-self: center;
+        flex-basis: 170px;
+        width: 170px;
+        height: 170px;
+    }
+
+    .round-logo h3 strong {
+        font-size: 31px;
+    }
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* Gambar poster asli pada tampilan awal */
+.hero {
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 35px;
+    overflow: hidden;
+}
+
+.product {
+    width: 100%;
+    min-height: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.poster-product {
+    display: block;
+    width: 100%;
+    max-width: 440px;
+    height: auto;
+    object-fit: contain;
+    border-radius: 18px;
+    filter: drop-shadow(0 15px 22px #174b2b20);
+}
+
+/* Tampilan tablet dan HP */
+@media (max-width: 850px) {
+    .hero {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .product {
+        width: 100%;
+        max-width: 480px;
+        margin: 0 auto;
+    }
+
+    .poster-product {
+        width: 100%;
+        max-width: 380px;
+    }
+}
+
+@media (max-width: 560px) {
+    .poster-product {
+        max-width: 320px;
+        border-radius: 12px;
+    }
+}
+
+/* ===== BAGIAN TENTANG DAN ILUSTRASI ===== */
+
+.section {
+    padding: 75px 7%;
+    background: #fffaf0;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.section-heading h2,
+.contact-section h2 {
+    margin: 10px 0;
+    color: #174b2b;
+    font-family: 'Nunito', sans-serif;
+    font-size: clamp(29px, 4vw, 42px);
+    font-weight: 900;
+}
+
+.section-description {
+    max-width: 600px;
+    margin: 0 auto;
+    color: #68735c;
+    font-size: 14px;
+}
+
+.drink-showcase {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 30px;
+    max-width: 1100px;
+    min-height: 390px;
+    margin: 0 auto 45px;
+    padding: 35px 45px;
+    overflow: hidden;
+    border: 1px solid #f0dfb8;
+    border-radius: 28px;
+    background: linear-gradient(120deg, #fff0c9, #fff9e9 65%, #e7edcf);
+}
+
+.showcase-text {
+    position: relative;
+    z-index: 2;
+}
+
+.mini-label {
+    display: inline-block;
+    padding: 7px 13px;
+    border-radius: 20px;
+    background: #174b2b;
+    color: white;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+}
+
+.showcase-text h3 {
+    margin: 18px 0 12px;
+    color: #174b2b;
+    font-family: 'Nunito', sans-serif;
+    font-size: clamp(29px, 3.5vw, 43px);
+    font-weight: 900;
+    line-height: 1.15;
+}
+
+.showcase-text h3 span {
+    color: #ff641c;
+}
+
+.showcase-text > p {
+    max-width: 400px;
+    color: #68735c;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.leaf-decoration {
+    position: absolute;
+    color: #d8e4c4;
+    font-size: 100px;
+    pointer-events: none;
+}
+
+.leaf-left {
+    top: -15px;
+    left: -15px;
+    transform: rotate(-30deg);
+}
+
+/* Ilustrasi gelas minuman */
+
+.drink-illustration {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 320px;
+}
+
+.sun-circle {
+    position: absolute;
+    width: 270px;
+    max-width: 85%;
+    aspect-ratio: 1;
+    border: 8px solid #fffdf1;
+    border-radius: 50%;
+    background: #ffd05a;
+    box-shadow: 0 15px 35px #79501a18;
+}
+
+.drink-cup {
+    position: absolute;
+    top: 65px;
+    width: 115px;
+    height: 195px;
+    border: 3px solid #ffffffd9;
+    border-radius: 12px 12px 27px 27px;
+    clip-path: polygon(0 0, 100% 0, 87% 100%, 13% 100%);
+    box-shadow: 0 15px 22px #4a351b30;
+}
+
+.cup-yellow {
+    left: 12%;
+    top: 90px;
+    transform: rotate(-10deg);
+    background: linear-gradient(90deg, #d8a51c, #ffe776 40%, #d8a51c);
+}
+
+.cup-orange {
+    right: 9%;
+    transform: rotate(9deg);
+    background: linear-gradient(90deg, #a84012, #ff8520 40%, #b64310);
+}
+
+.cup-lid {
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    width: 125px;
+    height: 17px;
+    border: 3px solid white;
+    border-radius: 50%;
+    background: #fff8e8;
+}
+
+.drink-ice {
+    position: absolute;
+    top: 24px;
+    width: 30px;
+    height: 28px;
+    border: 2px solid #ffffffd9;
+    border-radius: 7px;
+    background: #ffffff70;
+}
+
+.ice-a {
+    left: 18px;
+    transform: rotate(10deg);
+}
+
+.ice-b {
+    right: 15px;
+    transform: rotate(-14deg);
+}
+
+.ice-c {
+    left: 17px;
+    transform: rotate(-12deg);
+}
+
+.ice-d {
+    right: 14px;
+    transform: rotate(12deg);
+}
+
+.drink-brand {
+    position: absolute;
+    top: 70px;
+    left: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 83px;
+    height: 76px;
+    transform: translateX(-50%);
+    border: 3px solid white;
+    border-radius: 45%;
+    background: #174b2b;
+    color: white;
+    line-height: 1;
+}
+
+.drink-brand small,
+.order-logo small {
+    color: #ff641c;
+    font-size: 9px;
+    font-weight: 900;
+}
+
+.drink-brand strong {
+    font-family: 'Nunito', sans-serif;
+    font-size: 21px;
+    font-weight: 900;
+}
+
+.drink-brand span {
+    color: #ffd05a;
+    font-size: 15px;
+}
+
+.floating-lemon {
+    position: absolute;
+    z-index: 2;
+    display: grid;
+    place-items: center;
+    width: 43px;
+    height: 43px;
+    border: 5px solid #fff3bd;
+    border-radius: 50%;
+    background: #ffd53e;
+    color: #d89a14;
+    font-size: 22px;
+}
+
+.lemon-one {
+    right: 2%;
+    bottom: 35px;
+}
+
+.lemon-two {
+    top: 20px;
+    left: 16%;
+    transform: scale(.7);
+}
+
+.showcase-ribbon {
+    position: absolute;
+    z-index: 3;
+    bottom: 2px;
+    padding: 10px 20px;
+    transform: rotate(-3deg);
+    background: #174b2b;
+    color: white;
+    font-family: 'Nunito', sans-serif;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+/* Kartu aktivitas */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.card {
+    padding: 26px;
+    border: 1px solid #f0dfb8;
+    border-radius: 20px;
+    background: white;
+    box-shadow: 0 10px 25px #174b2b08;
+    transition: transform .2s, box-shadow .2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 16px 30px #174b2b15;
+}
+
+.card.featured {
+    border-color: #c8d8b9;
+    background: #f3f7e9;
+}
+
+.card h3 {
+    color: #174b2b;
+    font-family: 'Nunito', sans-serif;
+}
+
+.card p {
+    color: #68735c;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+/* ===== BAGIAN ORDER ===== */
+
+.order-section {
+    padding: 75px 7%;
+    background: #f1f5e5;
+}
+
+.order-content {
+    display: grid;
+    grid-template-columns: .9fr 1.1fr;
+    align-items: center;
+    gap: 55px;
+    max-width: 1050px;
+    margin: auto;
+}
+
+.order-visual {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 330px;
+    overflow: hidden;
+    border: 1px solid #dce5c8;
+    border-radius: 28px;
+    background: linear-gradient(145deg, #fff7df, #e0eacb);
+}
+
+.order-circle {
+    position: absolute;
+    width: 230px;
+    aspect-ratio: 1;
+    border: 8px solid white;
+    border-radius: 50%;
+    background: #ffd05a;
+}
+
+.order-cup {
+    position: absolute;
+    top: 75px;
+    width: 120px;
+    height: 190px;
+    border: 4px solid white;
+    border-radius: 14px 14px 28px 28px;
+    clip-path: polygon(0 0, 100% 0, 87% 100%, 13% 100%);
+    background: linear-gradient(90deg, #a83e10, #ff8b24 45%, #b74312);
+    box-shadow: 0 15px 25px #4a351b30;
+    transform: rotate(-7deg);
+}
+
+.order-cup-lid {
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    width: 130px;
+    height: 18px;
+    border: 3px solid white;
+    border-radius: 50%;
+    background: #fffaf0;
+}
+
+.order-ice {
+    position: absolute;
+    top: 25px;
+    width: 32px;
+    height: 29px;
+    border: 2px solid white;
+    border-radius: 7px;
+    background: #ffffff70;
+}
+
+.order-ice.ice-one {
+    left: 17px;
+}
+
+.order-ice.ice-two {
+    right: 15px;
+}
+
+.order-logo {
+    position: absolute;
+    top: 75px;
+    left: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 88px;
+    height: 80px;
+    transform: translateX(-50%);
+    border: 3px solid white;
+    border-radius: 45%;
+    background: #174b2b;
+    color: white;
+    line-height: 1;
+}
+
+.order-logo strong {
+    font-family: 'Nunito', sans-serif;
+    font-size: 23px;
+    font-weight: 900;
+}
+
+.order-logo span {
+    color: #ffd05a;
+    font-size: 16px;
+}
+
+.order-leaf {
+    position: absolute;
+    top: 15px;
+    left: 12px;
+    color: #174b2b;
+    font-size: 65px;
+    transform: rotate(-35deg);
+}
+
+.order-lemon {
+    position: absolute;
+    right: 20px;
+    bottom: 35px;
+    display: grid;
+    place-items: center;
+    width: 52px;
+    height: 52px;
+    border: 5px solid white;
+    border-radius: 50%;
+    background: #ffd53e;
+    color: #c38c11;
+    font-size: 24px;
+}
+
+.order-sticker {
+    position: absolute;
+    top: 25px;
+    right: 15px;
+    padding: 12px;
+    transform: rotate(8deg);
+    border-radius: 12px;
+    background: #174b2b;
+    color: #ffd05a;
+    text-align: center;
+    font-family: 'Nunito', sans-serif;
+    font-size: 12px;
+    font-weight: 900;
+}
+
+.order-text h2 {
+    margin: 12px 0;
+    color: #174b2b;
+    font-family: 'Nunito', sans-serif;
+    font-size: clamp(32px, 4vw, 46px);
+    font-weight: 900;
+    line-height: 1.12;
+}
+
+.order-text h2 span {
+    color: #ff641c;
+}
+
+.order-text > p:not(.label):not(.order-note) {
+    color: #68735c;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.order-info {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    margin-top: 23px;
+    padding: 16px;
+    border: 1px solid #dce5c8;
+    border-radius: 14px;
+    background: #fffdf6;
+}
+
+.order-icon {
+    display: grid;
+    flex-shrink: 0;
+    place-items: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    background: #ffeadb;
+    color: #ff641c;
+    font-size: 22px;
+}
+
+.order-info strong {
+    color: #174b2b;
+    font-size: 13px;
+}
+
+.order-info p {
+    margin-top: 4px;
+    color: #68735c;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.order-button {
+    margin-top: 20px;
+}
+
+.order-note {
+    margin-top: 13px;
+    color: #858b76;
+    font-size: 11px;
+}
+
+/* ===== KONTAK ===== */
+
+.contact-section {
+    padding: 55px 20px 65px;
+    background: #fffaf0;
+    text-align: center;
+}
+
+.contact-section > p:not(.label) {
+    max-width: 560px;
+    margin: 12px auto 0;
+    color: #68735c;
+    font-size: 14px;
+}
+
+.contact-button {
+    margin-top: 22px;
+    background: #174b2b;
+    box-shadow: 0 6px 0 #10371f;
+}
+
+.contact-button:hover {
+    box-shadow: 0 3px 0 #10371f;
+}
+
+/* ===== RESPONSIF ===== */
+
+@media (max-width: 850px) {
+    .drink-showcase {
+        grid-template-columns: 1fr;
+        padding: 35px 25px 25px;
+    }
+
+    .showcase-text {
+        text-align: center;
+    }
+
+    .showcase-text > p {
+        margin: auto;
+    }
+
+    .drink-illustration {
+        width: 100%;
+        max-width: 430px;
+        margin: auto;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+        max-width: 540px;
+    }
+
+    .order-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        max-width: 550px;
+    }
+
+    .order-visual {
+        min-height: 320px;
+    }
+}
+
+@media (max-width: 560px) {
+    .section,
+    .order-section {
+        padding: 48px 18px;
+    }
+
+    .drink-showcase {
+        padding: 28px 18px 20px;
+        border-radius: 20px;
+    }
+
+    .drink-illustration {
+        min-height: 300px;
+    }
+
+    .sun-circle {
+        width: 230px;
+    }
+
+    .drink-cup {
+        transform-origin: center;
+        scale: .88;
+    }
+
+    .cup-yellow {
+        left: 4%;
+        transform: rotate(-9deg);
+    }
+
+    .cup-orange {
+        right: 4%;
+        transform: rotate(8deg);
+    }
+
+    .showcase-ribbon {
+        font-size: 9px;
+    }
+
+    .order-visual {
+        min-height: 290px;
+    }
+
+    .order-circle {
+        width: 205px;
+    }
+
+    .order-sticker {
+        right: 8px;
+        font-size: 10px;
+    }
+}
+
+/* ===== MENU ORDER ===== */
+
+.menu-order {
+    padding: 75px 7%;
+    background: #fff8e9;
+    scroll-margin-top: 20px;
+}
+
+.order-heading {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.order-heading h2 {
+    margin: 12px 0;
+    color: #174b2b;
+    font-family: 'Nunito', sans-serif;
+    font-size: clamp(30px, 4vw, 43px);
+    font-weight: 900;
+}
+
+.order-heading h2 span {
+    color: #ff641c;
+}
+
+.order-heading p {
+    color: #68735c;
+    font-size: 14px;
+}
+
+.menu-list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+    max-width: 1050px;
+    margin: auto;
+}
+
+.menu-item {
+    overflow: hidden;
+    border: 1px solid #eadcbd;
+    border-radius: 20px;
+    background: white;
+    box-shadow: 0 10px 25px #174b2b0d;
+    transition: transform .2s, border-color .2s;
+}
+
+.menu-item:hover {
+    transform: translateY(-5px);
+    border-color: #ffb36c;
+}
+
+.menu-image {
+    position: relative;
+    display: grid;
+    place-items: center;
+    min-height: 165px;
+    overflow: hidden;
+}
+
+.menu-image::before {
+    content: "";
+    position: absolute;
+    width: 125px;
+    height: 125px;
+    border: 7px solid #ffffffa8;
+    border-radius: 50%;
+}
+
+.menu-image.original {
+    background: linear-gradient(135deg, #e9f0c9, #b5cf87);
+}
+
+.menu-image.lemon {
+    background: linear-gradient(135deg, #fff1a8, #ffce36);
+}
+
+.menu-image.thai {
+    background: linear-gradient(135deg, #ffd4a1, #f18a44);
+}
+
+.drink-emoji {
+    position: relative;
+    z-index: 1;
+    font-size: 76px;
+    filter: drop-shadow(0 8px 5px #49341b22);
+}
+
+.menu-tag {
+    position: absolute;
+    top: 13px;
+    left: 13px;
+    padding: 5px 9px;
+    border-radius: 20px;
+    background: #174b2b;
+    color: white;
+    font-size: 9px;
+    font-weight: 900;
+}
+
+.menu-details {
+    padding: 20px;
+}
+
+.menu-details h3 {
+    color: #174b2b;
+    font-family: 'Nunito', sans-serif;
+    font-size: 20px;
+}
+
+.menu-details p {
+    min-height: 42px;
+    margin: 7px 0 12px;
+    color: #75806b;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.menu-price {
+    display: block;
+    margin-bottom: 15px;
+    color: #ff641c;
+    font-size: 20px;
+    font-weight: 900;
+}
+
+.choose-btn {
+    width: 100%;
+    padding: 11px;
+    border: 1px solid #174b2b;
+    border-radius: 10px;
+    background: white;
+    color: #174b2b;
+    font-family: inherit;
+    font-weight: 800;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.choose-btn:hover,
+.choose-btn.selected {
+    background: #174b2b;
+    color: white;
+}
+
+/* Ringkasan pesanan */
+
+.order-form {
+    max-width: 760px;
+    margin: 38px auto 0;
+    padding: 28px;
+    border: 1px solid #e5d8b8;
+    border-radius: 22px;
+    background: white;
+    box-shadow: 0 15px 35px #174b2b0c;
+}
+
+.form-heading {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 20px;
+}
+
+.form-icon {
+    display: grid;
+    place-items: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    background: #fff0d4;
+    font-size: 24px;
+}
+
+.form-heading h3 {
+    color: #174b2b;
+    font-family: 'Nunito', sans-serif;
+    font-size: 21px;
+}
+
+.form-heading p {
+    color: #7b826f;
+    font-size: 12px;
+}
+
+.empty-order {
+    padding: 18px;
+    border: 1px dashed #d9d9c5;
+    border-radius: 12px;
+    color: #8a907e;
+    text-align: center;
+    font-size: 13px;
+}
+
+.order-row {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    align-items: center;
+    gap: 14px;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee8d9;
+}
+
+.order-product-name {
+    color: #174b2b;
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.order-product-price {
+    margin-top: 4px;
+    color: #ff641c;
+    font-size: 12px;
+}
+
+.quantity-control {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.quantity-control button,
+.remove-item {
+    display: grid;
+    place-items: center;
+    width: 29px;
+    height: 29px;
+    border: 1px solid #d8e3ca;
+    border-radius: 8px;
+    background: #f3f7e9;
+    color: #174b2b;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+.quantity-control span {
+    min-width: 12px;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.remove-item {
+    border-color: #f4d8cc;
+    background: #fff0e9;
+    color: #d94d21;
+}
+
+.order-total {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 2px dashed #e8dfc9;
+    color: #174b2b;
+    font-weight: 800;
+}
+
+.order-total strong {
+    color: #ff641c;
+    font-size: 24px;
+}
+
+.make-order-btn {
+    width: 100%;
+    margin-top: 22px;
+    padding: 15px;
+    border: none;
+    border-radius: 11px;
+    background: #174b2b;
+    color: white;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 900;
+    cursor: pointer;
+    transition: background .2s;
+}
+
+.make-order-btn:hover {
+    background: #23663b;
+}
+
+.order-hint {
+    margin-top: 12px;
+    color: #929681;
+    text-align: center;
+    font-size: 11px;
+}
+
+.order-result {
+    display: none;
+    margin-top: 18px;
+    padding: 16px;
+    border-radius: 12px;
+    background: #f0f6e7;
+    color: #174b2b;
+    font-size: 13px;
+    line-height: 1.8;
+    overflow-wrap: anywhere;
+}
+
+.order-result.show {
+    display: block;
+}
+
+.order-result a {
+    display: inline-block;
+    margin-top: 10px;
+    color: #174b2b;
+    font-weight: 900;
+    text-decoration: underline;
+}
+
+@media (max-width: 850px) {
+    .menu-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 560px) {
+    .menu-order {
+        padding: 50px 17px;
+    }
+
+    .menu-list {
+        grid-template-columns: 1fr;
+        max-width: 380px;
+    }
+
+    .menu-image {
+        min-height: 180px;
+    }
+
+    .order-form {
+        padding: 19px 15px;
+    }
+
+    .order-row {
+        grid-template-columns: 1fr auto;
+        gap: 10px;
+    }
+
+    .remove-item {
+        grid-column: 2;
+        justify-self: end;
+    }
+}
+
+/* Gambar produk pada kartu menu */
+
+.menu-image {
+    position: relative;
+    height: 220px;
+    padding: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 18px 18px 0 0;
+}
+
+.menu-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+}
+
+.menu-item:hover .menu-image img {
+    transform: scale(1.05);
+}
+
+.menu-image.original {
+    background: linear-gradient(135deg, #e9f0c9, #b5cf87);
+}
+
+.menu-image.lemon {
+    background: linear-gradient(135deg, #fff1a8, #ffce36);
+}
+
+.menu-image.thai {
+    background: linear-gradient(135deg, #ffd4a1, #f18a44);
+}
+
+@media (max-width: 560px) {
+    .menu-image {
+        height: 240px;
+    }
+}
